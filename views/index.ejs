@@ -1,0 +1,44 @@
+<!-- <!DOCTYPE html> -->
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>MY APP</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <h1> BLOG OF QUOTES! </h1>
+        <form action="/quotes" method="POST"> 
+            <input type="text" placeholder="name" name="name">
+            <input type="text" placeholder="quote" name="quote">
+            <button type="submit">
+                Submit
+            </button>
+        </form>
+
+        <h2> Blog Quotes </h2>
+    <ul class="quotes">
+        <% for(var i=0; i<quotes.length; i++) {%>
+        <li class="quote">
+            <span><%= quotes[i].name %></span>:
+            <span><%= quotes[i].quote %></span>
+            <i class="fa fa-thumbs-up"></i>
+            <i class="fa fa-thumbs-down"></i>
+        </li>    
+        <% } %>
+    </ul>
+    <div>
+        <h2> Updating Dan's Quotes!</h2>
+        <p>Replace the first Dan's quote with a quote written by Arom</p>
+        <button id="update-button">Replace Dan's quote</button>
+    </div>
+   
+    <div>
+        <h2> Deleting Quotes!</h2>
+        <p>Delete Arom's quote. Does nothing if there is no Arom's quotes</p>
+        <button id="delete-button">Delete Arom's quote</button>
+    </div>
+    <div id="message"></div>
+    <script src="main.js"></script>
+    </body>
+</html>
